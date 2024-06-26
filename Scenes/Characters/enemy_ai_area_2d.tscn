@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://doro3euar1qk4"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/EnemyAI_Area2D.gd" id="1_f6uo0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbdpi"]
+
+[node name="EnemyAI_Area2D" type="Area2D"]
+script = ExtResource("1_f6uo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rbdpi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

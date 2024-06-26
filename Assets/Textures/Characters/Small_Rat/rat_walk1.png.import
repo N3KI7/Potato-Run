@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clhpa2cjtyy4j"
-path="res://.godot/imported/Kartoffel_02.png-2c8b484837ce0c64a97aac6a7b3db3cc.ctex"
+uid="uid://b1vjoyqppvvia"
+path="res://.godot/imported/rat_walk1.png-de30727776df6a35ebb97874ad483c46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Characters/Player/Kartoffel_02.png"
-dest_files=["res://.godot/imported/Kartoffel_02.png-2c8b484837ce0c64a97aac6a7b3db3cc.ctex"]
+source_file="res://Assets/Textures/Characters/Small_Rat/rat_walk1.png"
+dest_files=["res://.godot/imported/rat_walk1.png-de30727776df6a35ebb97874ad483c46.ctex"]
 
 [params]
 
