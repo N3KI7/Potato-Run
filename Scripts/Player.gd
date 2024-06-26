@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 @onready var player_sprite = $AnimatedSprite2D
-@onready var beach_background = $"../BeachBackground"
+@onready var beach_background = $"../PlayerCamera/BeachBackground"
 @onready var player_camera = $"../PlayerCamera"
 
 
-
+const ORIGIN = {x = 0.0, y = 0.0}
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
@@ -16,7 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	
 	player_camera.position = lerp(player_camera.position, position, 8.0*delta)
-	# player_camera.position.x = (0.1*player_camera.position.x)+position.x
+	beach_background.position.x = (-0.025*player_camera.position.x)
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -41,3 +41,11 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	if body.name == "Player":
+		print("player")
+		body.position.x = 0.0
+		body.position.y = 0.0
+		
