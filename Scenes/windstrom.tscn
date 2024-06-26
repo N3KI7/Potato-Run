@@ -18,7 +18,7 @@ position = Vector2(-2.38418e-07, -22.5)
 scale = Vector2(0.3125, 0.351563)
 sprite_frames = ExtResource("2_58fis")
 animation = &"gif"
-frame_progress = 0.606836
+frame_progress = 0.976991
 speed_scale = 2.1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
