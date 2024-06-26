@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://jupq4mnxgtss"]
+
+[ext_resource type="Script" path="res://Scripts/Windstrom.gd" id="1_qvst1"]
+[ext_resource type="SpriteFrames" uid="uid://cmndr85jd3er7" path="res://Assets/Textures/Decorations/Windstrom.gif" id="2_58fis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7fpx"]
+size = Vector2(20, 45)
+
+[node name="Windstrom" type="Area2D"]
+script = ExtResource("1_qvst1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22.5)
+shape = SubResource("RectangleShape2D_j7fpx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.38418e-07, -22.5)
+scale = Vector2(0.3125, 0.351563)
+sprite_frames = ExtResource("2_58fis")
+animation = &"gif"
+frame_progress = 0.606836
+speed_scale = 2.1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
