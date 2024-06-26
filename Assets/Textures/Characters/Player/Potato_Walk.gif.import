@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://gjl7tgj3tnlo"
+path="res://.godot/imported/Potato_Walk.gif-daa37f50baa9fc23466e62c518422c89.tres"
+
+[deps]
+
+source_file="res://Assets/Textures/Characters/Player/Potato_Walk.gif"
+dest_files=["res://.godot/imported/Potato_Walk.gif-daa37f50baa9fc23466e62c518422c89.tres"]
+
+[params]
+
+frames_per_second=30

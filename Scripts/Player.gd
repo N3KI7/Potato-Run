@@ -4,9 +4,9 @@ extends CharacterBody2D
 @onready var beach_background = $"../PlayerCamera/BeachBackground"
 @onready var player_camera = $"../PlayerCamera"
 
+var potatos_collected = 0
 
 const ORIGIN = {x = 0.0, y = 0.0}
-
 const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
 
@@ -30,7 +30,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
-		player_sprite.play("walk")
+		player_sprite.play("gif")
 		if direction > 0:
 			player_sprite.flip_h = false
 		else:
@@ -42,6 +42,9 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func collect_potato():
+	potatos_collected += 1
+	print("Potatoes: ", potatos_collected)
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
