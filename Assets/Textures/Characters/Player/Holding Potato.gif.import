@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://dsp0vp1gwqioj"
+path="res://.godot/imported/Holding Potato.gif-b188ff8d94cc99d33ea30c2870915305.tres"
+
+[deps]
+
+source_file="res://Assets/Textures/Characters/Player/Holding Potato.gif"
+dest_files=["res://.godot/imported/Holding Potato.gif-b188ff8d94cc99d33ea30c2870915305.tres"]
+
+[params]
+
+frames_per_second=30

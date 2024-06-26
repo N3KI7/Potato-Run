@@ -30,16 +30,23 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
-		player_sprite.play("gif")
 		if direction > 0:
 			player_sprite.flip_h = false
 		else:
 			player_sprite.flip_h = true
-		velocity.x = direction * SPEED
+		if velocity.y <= -50:
+			player_sprite.play("hold")
+		else:
+			player_sprite.play("walk")
+		velocity.x = lerp(velocity.x, direction * SPEED, 15.0*delta)
+		if velocity.y <= -50:
+			player_sprite.play("hold")
+		
 	else:
+		player_sprite.play("walk")
 		player_sprite.stop()
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		velocity.x = lerp(velocity.x, 0.0, 15.0*delta)
+	
 	move_and_slide()
 
 func collect_potato():
