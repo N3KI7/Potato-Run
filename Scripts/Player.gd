@@ -86,10 +86,13 @@ func _on_area_2d_body_entered(body):
 		body.position.y = 0.0
 
 func damage():
-	level.spawn_potatoes(potatos_collected)
-	potatos_collected = 0
-	collision_layer = 2
-	blink_timer = 0.0
-	invincibility_timer = 0.0
+	if potatos_collected > 0:
+		level.spawn_potatoes(potatos_collected)
+		potatos_collected = 0
+		collision_layer = 2
+		blink_timer = 0.0
+		invincibility_timer = 0.0
+	else:
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	
 	

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_70cy8"]
 [ext_resource type="Theme" uid="uid://dwl7xx71kldom" path="res://Assets/Textures/UI/start_button.tres" id="2_r0ocy"]
 [ext_resource type="Theme" uid="uid://bn8ykr0g7lpyy" path="res://Assets/Textures/UI/exit_button.tres" id="3_tgyjx"]
-[ext_resource type="Texture2D" uid="uid://dgqtjudeg875" path="res://Assets/Textures/Background/main_menu.png" id="4_eb0eh"]
+[ext_resource type="Texture2D" uid="uid://c62snilxlf8sc" path="res://Assets/Textures/Background/black_screen.png" id="4_ojlfv"]
 [ext_resource type="Texture2D" uid="uid://xhpc8ajx17ej" path="res://Assets/Textures/UI/gameOver.png" id="5_7iorr"]
 
 [node name="Menu" type="Control"]
@@ -23,10 +23,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -24.0
-offset_right = -25.0
-offset_bottom = 27.0
+offset_left = -89.9999
+offset_top = -2.99997
+offset_right = -51.9999
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.05, 5.05)
@@ -43,17 +43,18 @@ theme = ExtResource("3_tgyjx")
 text = "⁣"
 
 [node name="MainMenuTexture" type="Node2D" parent="."]
+position = Vector2(-4, -4)
 
 [node name="MainMenu" type="Sprite2D" parent="MainMenuTexture"]
 texture_filter = 1
-position = Vector2(-6.10352e-05, -3.05176e-05)
-scale = Vector2(0.451172, 0.452083)
-texture = ExtResource("4_eb0eh")
+position = Vector2(-9, -7)
+scale = Vector2(0.614062, 0.621296)
+texture = ExtResource("4_ojlfv")
 centered = false
 
 [node name="GameOver" type="Sprite2D" parent="MainMenuTexture"]
-position = Vector2(605, 127)
-scale = Vector2(1.25368, 1.25368)
+position = Vector2(591, 146)
+scale = Vector2(1.78125, 1.78125)
 texture = ExtResource("5_7iorr")
 
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_button_down"]

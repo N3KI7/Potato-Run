@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://d1evb0rm0ccy2"]
+[gd_scene load_steps=21 format=3 uid="uid://d1evb0rm0ccy2"]
 
+[ext_resource type="Script" path="res://Scripts/Level_logic.gd" id="1_0unfn"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="1_60jrn"]
 [ext_resource type="Texture2D" uid="uid://ba5xyqaossymb" path="res://Assets/Textures/Tilesets/RunningPotato Tileset Beach.png" id="1_nymgt"]
 [ext_resource type="PackedScene" uid="uid://4mktefcghpn2" path="res://Scenes/Player.tscn" id="2_g5hl5"]
@@ -14,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cyqg6kwvd0x4o" path="res://Assets/new_assets/Cloud2.png" id="13_26bke"]
 [ext_resource type="Texture2D" uid="uid://bylw4umlf8buq" path="res://Assets/new_assets/Cloud.png" id="14_ab5bo"]
 [ext_resource type="Texture2D" uid="uid://bcm75ysehqqpr" path="res://Assets/new_assets/Wasser.png" id="15_5pnh7"]
-[ext_resource type="PackedScene" uid="uid://bqu0ljbifod4" path="res://Scenes/small_rat.tscn" id="17_bd638"]
+[ext_resource type="PackedScene" uid="uid://dbgcj3kdp0wgm" path="res://Scenes/Characters/small_rat.tscn" id="17_bd638"]
 [ext_resource type="PackedScene" uid="uid://doro3euar1qk4" path="res://Scenes/Characters/enemy_ai_area_2d.tscn" id="18_wcoor"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rblxc"]
@@ -132,6 +133,7 @@ sources/5 = SubResource("TileSetAtlasSource_rblxc")
 size = Vector2(3967, 49)
 
 [node name="Level_1" type="Node2D"]
+script = ExtResource("1_0unfn")
 
 [node name="world" type="Node2D" parent="."]
 
@@ -143,7 +145,7 @@ zoom = Vector2(4.875, 4.875)
 script = ExtResource("1_60jrn")
 
 [node name="BeachBackground" type="Sprite2D" parent="world/PlayerCamera"]
-position = Vector2(244.444, -558.333)
+position = Vector2(-44.4444, -61.1111)
 scale = Vector2(0.562132, 0.537953)
 texture = ExtResource("3_o32vr")
 
@@ -1073,7 +1075,7 @@ position = Vector2(1055, 118)
 position = Vector2(855.5, 107.5)
 shape = SubResource("RectangleShape2D_wki17")
 
-[node name="Small_Rat" parent="." instance=ExtResource("17_bd638")]
+[node name="small_rat" parent="." instance=ExtResource("17_bd638")]
 position = Vector2(359, 38)
 
 [node name="EnemyAI_Area2D" parent="." instance=ExtResource("18_wcoor")]
@@ -1083,3 +1085,4 @@ position = Vector2(297, 39)
 position = Vector2(423, 39)
 
 [connection signal="body_entered" from="world/functions/Area2D" to="world/Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="EnemyAI_Area2D" to="small_rat" method="_on_enemy_ai_area_2d_body_entered"]
