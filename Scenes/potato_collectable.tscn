@@ -1,22 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4hyr8xsixvv8"]
 
-[ext_resource type="Script" path="res://potato_collectable.gd" id="1_03258"]
+[ext_resource type="Script" path="res://Scripts/potato_collectable.gd" id="1_03258"]
 [ext_resource type="Texture2D" uid="uid://ql16geb6g0of" path="res://Assets/Textures/Items/potato_collectable.png" id="2_fca81"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dni7a"]
-size = Vector2(12, 10)
+size = Vector2(12, 12)
 
 [node name="Potato_Collectable" type="Area2D"]
 script = ExtResource("1_03258")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, 5)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_dni7a")
 
 [node name="PotatoCollectable" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(6, 5)
-scale = Vector2(0.375, 0.375)
+position = Vector2(-4.76837e-07, -4.76837e-07)
+rotation = -0.837758
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_fca81")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

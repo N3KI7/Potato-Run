@@ -68,3 +68,5 @@ position = Vector2(-1, 2)
 scale = Vector2(1.85938, 1.85938)
 sprite_frames = SubResource("SpriteFrames_hpf6d")
 animation = &"walk"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

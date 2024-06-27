@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbgcj3kdp0wgm"]
+[gd_scene load_steps=10 format=3 uid="uid://dbgcj3kdp0wgm"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Small_Rat.gd" id="1_eu46e"]
 [ext_resource type="Texture2D" uid="uid://uw7nyb2jgiiu" path="res://Assets/Textures/Characters/Small_Rat/small_rat_idle.png" id="2_jq40d"]
@@ -33,10 +33,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om1r5"]
-size = Vector2(20, 9)
+size = Vector2(11, 2.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dthhw"]
-size = Vector2(34, 13)
+size = Vector2(32, 12.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjwfw"]
+size = Vector2(15, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqh6l"]
 size = Vector2(20, 0)
@@ -47,20 +50,25 @@ script = ExtResource("1_eu46e")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2hymn")
-animation = &"walk"
-frame_progress = 0.0996264
+animation = &"idle"
+speed_scale = 0.5
 
 [node name="GetDamage" type="Area2D" parent="."]
 
 [node name="GetDamage" type="CollisionShape2D" parent="GetDamage"]
-position = Vector2(0, -10.5)
+position = Vector2(-0.5, -9.375)
 shape = SubResource("RectangleShape2D_om1r5")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="DealDamage" type="Area2D" parent="."]
 
-[node name="DealDamage" type="CollisionShape2D" parent="DealDamage"]
-position = Vector2(0, 0.5)
+[node name="DealDamageLong" type="CollisionShape2D" parent="DealDamage"]
+position = Vector2(0, 2.25)
 shape = SubResource("RectangleShape2D_dthhw")
+
+[node name="DealDamage" type="CollisionShape2D" parent="DealDamage"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_sjwfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
