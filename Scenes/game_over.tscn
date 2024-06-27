@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://o4ecuppliq6h"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_70cy8"]
+[ext_resource type="Theme" uid="uid://dwl7xx71kldom" path="res://Assets/Textures/UI/start_button.tres" id="2_r0ocy"]
+[ext_resource type="Theme" uid="uid://bn8ykr0g7lpyy" path="res://Assets/Textures/UI/exit_button.tres" id="3_tgyjx"]
+[ext_resource type="Texture2D" uid="uid://dgqtjudeg875" path="res://Assets/Textures/Background/main_menu.png" id="4_eb0eh"]
+[ext_resource type="Texture2D" uid="uid://xhpc8ajx17ej" path="res://Assets/Textures/UI/gameOver.png" id="5_7iorr"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70cy8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -24.0
+offset_right = -25.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.05, 5.05)
+
+[node name="Play" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r0ocy")
+text = "⁣"
+
+[node name="Exit" type="Button" parent="CanvasLayer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_tgyjx")
+text = "⁣"
+
+[node name="MainMenuTexture" type="Node2D" parent="."]
+
+[node name="MainMenu" type="Sprite2D" parent="MainMenuTexture"]
+texture_filter = 1
+position = Vector2(-6.10352e-05, -3.05176e-05)
+scale = Vector2(0.451172, 0.452083)
+texture = ExtResource("4_eb0eh")
+centered = false
+
+[node name="GameOver" type="Sprite2D" parent="MainMenuTexture"]
+position = Vector2(605, 127)
+scale = Vector2(1.25368, 1.25368)
+texture = ExtResource("5_7iorr")
+
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_button_down"]

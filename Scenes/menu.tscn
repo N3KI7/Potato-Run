@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://1nfd83ahug0f"]
+[gd_scene load_steps=6 format=3 uid="uid://1nfd83ahug0f"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_csdog"]
+[ext_resource type="Texture2D" uid="uid://dgqtjudeg875" path="res://Assets/Textures/Background/main_menu.png" id="2_3k74s"]
+[ext_resource type="Theme" uid="uid://dwl7xx71kldom" path="res://Assets/Textures/UI/start_button.tres" id="2_iymud"]
+[ext_resource type="Theme" uid="uid://bn8ykr0g7lpyy" path="res://Assets/Textures/UI/exit_button.tres" id="3_3v0f7"]
+[ext_resource type="Texture2D" uid="uid://ppuk68f36a67" path="res://Assets/Textures/Background/running_potato_logo.png" id="3_yskws"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,23 +15,47 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_csdog")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 467.0
-offset_top = 274.0
-offset_right = 671.0
-offset_bottom = 378.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -117.0
+offset_right = -33.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.05, 5.05)
+
+[node name="Play" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_iymud")
+text = "⁣"
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="CanvasLayer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
-text = "Play"
+theme = ExtResource("3_3v0f7")
+text = "⁣"
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Exit"
+[node name="MainMenuTexture" type="Node2D" parent="."]
 
-[connection signal="button_down" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_button_down"]
-[connection signal="button_down" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_button_down"]
+[node name="MainMenu" type="Sprite2D" parent="MainMenuTexture"]
+texture_filter = 1
+position = Vector2(-6.10352e-05, -3.05176e-05)
+scale = Vector2(0.451172, 0.452083)
+texture = ExtResource("2_3k74s")
+centered = false
+
+[node name="RunningPotatoLogo" type="Sprite2D" parent="MainMenuTexture"]
+texture_filter = 1
+position = Vector2(591.9, 119.88)
+scale = Vector2(1.38443, 1.38443)
+texture = ExtResource("3_yskws")
+
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_button_down"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://3lw2dv8ndfwm"]
+
+[ext_resource type="Script" path="res://Scripts/potato_falling.gd" id="1_2rrn0"]
+[ext_resource type="PackedScene" uid="uid://c4hyr8xsixvv8" path="res://Scenes/potato_collectable.tscn" id="2_iasrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f007w"]
+size = Vector2(0, 0)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_2rrn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_f007w")
+disabled = true
+one_way_collision = true
+
+[node name="Potato_Collectable" parent="." instance=ExtResource("2_iasrn")]
+script = null
+
+[connection signal="body_entered" from="Potato_Collectable" to="." method="_on_potato_collectable_body_entered"]
