@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbgcj3kdp0wgm"]
+[gd_scene load_steps=9 format=3 uid="uid://bqu0ljbifod4"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Small_Rat.gd" id="1_eu46e"]
 [ext_resource type="Texture2D" uid="uid://uw7nyb2jgiiu" path="res://Assets/Textures/Characters/Small_Rat/small_rat_idle.png" id="2_jq40d"]
