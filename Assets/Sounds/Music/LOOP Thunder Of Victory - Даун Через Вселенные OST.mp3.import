@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqaoudhpa23t1"
+path="res://.godot/imported/LOOP Thunder Of Victory - Даун Через Вселенные OST.mp3-b1cec6363d6254295b74d056de97927a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/LOOP Thunder Of Victory - Даун Через Вселенные OST.mp3"
+dest_files=["res://.godot/imported/LOOP Thunder Of Victory - Даун Через Вселенные OST.mp3-b1cec6363d6254295b74d056de97927a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
